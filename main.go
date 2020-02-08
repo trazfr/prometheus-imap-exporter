@@ -129,6 +129,7 @@ func (i *imapMetrics) disconnect(client *client.Client) {
 	if err := client.Logout(); err != nil {
 		log.Println("Could not logout: ", err)
 	}
+	client.Terminate()
 }
 
 func (i *imapMetrics) dial() (*client.Client, error) {

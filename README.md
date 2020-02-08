@@ -1,4 +1,4 @@
-# prometheus-imap
+# prometheus-imap-exporter
 Prometheus monitoring of mailboxes through IMAP
 
 ## Example of configuration files
