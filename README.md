@@ -3,14 +3,14 @@ Prometheus monitoring of mailboxes through IMAP
 
 ## Example of configuration files
 
-- `timeout` is in milliseconds
+- `timeout` is in seconds
 - `imap.cacert.example.com` uses a CACert certificate which is not installed on our computer, so we provide the [class 3 CAcert.org certificate](http://www.cacert.org/index.php?id=3)
 - `imap.free.fr` uses the system's TLS certificates
 
 ```
 {
     "listen": ":9091",
-    "timeout": 5000,
+    "timeout": 5.0,
     "accounts": [
         {
             "url": "imaps://user:password@imap.cacert.example.com",
