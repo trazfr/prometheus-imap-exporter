@@ -1,5 +1,14 @@
 # prometheus-imap-exporter
+
 Prometheus monitoring of mailboxes through IMAP
+
+## Install
+
+Having a working Golang environment:
+
+```bash
+go install github.com/trazfr/prometheus-imap-exporter@latest
+```
 
 ## Example of configuration files
 
