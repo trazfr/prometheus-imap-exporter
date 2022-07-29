@@ -90,7 +90,7 @@ func (c *Collector) Collect(ch chan<- prometheus.Metric) {
 				errorToPromResult(err),
 				metric.host, metric.user)
 
-			res := c.promCounter.WithLabelValues(metric.host, errorToString(err))
+			res := c.promCounter.WithLabelValues(metric.host, metric.user, errorToString(err))
 			res.Inc()
 			res.Collect(ch)
 
@@ -171,7 +171,7 @@ func NewCollector(config *Config, client *http.Client) Collector {
 			Namespace: namespace,
 			Name:      "fetch_total",
 			Help:      "Number of times the fetch performed.",
-		}, []string{"host", "result"}),
+		}, []string{"server", "user", "result"}),
 	}
 
 	for _, account := range config.Accounts {
